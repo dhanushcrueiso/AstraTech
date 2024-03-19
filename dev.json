@@ -1,0 +1,12 @@
+{
+    "env": "dev",
+    "app_name": "astra-tech",
+    "port": "3007",
+    "database_url": "postgresql://postgres:postgres@localhost:5432/astra_tech?sslmode=disable",
+    "max_db_conn": 5,
+    "log_level": "DEBUG",
+    "token_len": 256,
+    "token_expiry": 7776000,
+    "service_token": "servicetoken"
+  }
+  
