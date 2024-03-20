@@ -2,11 +2,12 @@ package main
 
 import (
 	// "AstraTech/config"
+	"AstraTech/config"
+	"AstraTech/internal/database/db"
 	"AstraTech/internal/routes"
 	"fmt"
 	"log"
 	"os"
-	"swiggyPlayergame/AstraTech/config"
 
 	"github.com/gofiber/fiber"
 )
@@ -25,6 +26,12 @@ func main() {
 	var cnf *config.Config
 	config.ParseJSON(file, &cnf)
 	config.Set(cnf)
+
+	db.Init(&db.Config{
+		URL:       cnf.DatabaseURL,
+		MaxDBConn: cnf.MaxDBConn,
+	})
+
 	app := fiber.New()
 	routes.SetupRoutes(app)
 	fmt.Printf("Server is running on port %s\n", cnf.Port)
