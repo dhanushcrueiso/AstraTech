@@ -9,7 +9,7 @@ import (
 	"github.com/gofiber/fiber"
 )
 
-const directory = "/Users/dhanush/AstraTech/files/"
+const directory = "/tmp/astra/files/"
 
 func init() {
 	if err := os.MkdirAll(directory, 0755); err != nil {

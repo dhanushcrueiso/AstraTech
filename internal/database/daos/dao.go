@@ -12,7 +12,7 @@ import (
 	"time"
 )
 
-const directory = "/Users/dhanush/AstraTech/files/"
+const directory = "/tmp/astra/files/"
 
 func ProcessData(filename string) {
 	fmt.Println("checking data", filename)
